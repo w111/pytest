@@ -7,3 +7,4 @@ page = requests.get(
 soup = BeautifulSoup(page.text, "html.parser")
 h1 = soup.body.findAll(['h1'])[0]
 print(h1.text)
+
