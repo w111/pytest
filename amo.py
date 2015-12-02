@@ -1,12 +1,16 @@
 import requests
-r = requests.post('https://garpun.amocrm.ru/private/api/auth.php?type=json',
-                  data = {"USER_LOGIN":"meta@realweb.ru", "USER_HASH":"f6fc87708b2ab944f069977de0e4a6c4"}
-                  ,headers={"accept", "application/json"})
-print(r.status_code)
-print(r.headers['content-type'])
-print(r.text)
-print(r.json())
+import json
 
-	# var accountsResponse = getData(Unirest.get('https://garpun.amocrm.ru/private/api/v2/json/accounts/current')
-	# 	.asString()
-	# 	.getBody());
+# cookies = dict(session_id=r.cookies['session_id'])
+#r = requests.get('http://logs.garpun.lan:9200/_stats')#, cookies=cookies)
+# r = requests.get('http://logs.garpun.lan:9200/*/_search?pretty')
+r = requests.get('http://logs.garpun.lan:9200/_count?pretty')
+
+print(r.status_code)
+print(r.headers)
+#print(r.text)
+print(r.json())
+# print(r.cookies)
+# for item in r.json()["hits"]["hits"]:
+#         print (item)
+
